@@ -1,0 +1,30 @@
+textarea {
+    height: 150px !important;
+    box-sizing: border-box;
+    resize: none !important;
+  }
+
+.edit-btn{
+    color: white !important;
+    background-color: #a6192e !important;
+}
+
+label{
+    color: #a6192e;
+    font-weight: 500;
+}
+
+.back {
+    background-color: #ddd;
+    color: #a6192e;
+    padding: 10px 20px;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+  }
+
+.back:hover{
+    background-color: #ddd;
+    color: #a6192e;
+    text-decoration: none;
+}

@@ -1,0 +1,199 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ddd;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+  }
+
+  .sidenav h3{
+      color: #a6192e;
+  }
+  .courses img{
+      width: 25px;
+      vertical-align: sub;
+  }
+
+
+  .separator{
+    height: 25px;
+    border-bottom: 1px solid #a6192e;
+    width: 100%;
+    opacity: 0.3;
+    margin-bottom: 15px;
+  }
+  
+  .sidenav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    transition: 0.3s;
+    margin-left: 5px;
+  }
+  
+  .sidenav a:hover {
+    color: #a6192e;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #a6192e;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+  .hamburger{
+    font-size: 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: #a6192e;
+    padding: 0 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+  }
+
+  .login-details{
+    margin: 25px 30px;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .login-details button{
+    font-weight: bold;
+    color: #a6192e !important;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .login-details img{
+    vertical-align: middle;
+    width: 40px;
+  }
+
+  .mymodal-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.mymodal-header button{
+    color: gray;
+    border-radius: 50%;
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+}
+
+.mymodal-header button span{
+    position: relative;
+    bottom: 3px;
+}
+
+.mymodal-header button:hover{
+    background-color: #a6192e;
+    color: white !important;
+}
+
+.btn-bool{
+    color: white !important;
+    background-color: #a6192e !important;
+    width: 175px;
+}
+
+.modal-title{
+    color: #a6192e;
+}
+
+.courses-section .courses{
+    display: inline-block;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.courses-section h3{
+    color: cornflowerblue;
+}
+
+.courses-section .courses img{
+    vertical-align: text-top;
+}
+.courses-section .courses a{
+    color: white;
+}
+
+.edit-btn{
+    color: white !important;
+    background-color: #a6192e !important;
+}
+
+.card{
+    min-height: 400px;
+}
+
+.card-title{
+    color: #a6192e !important;
+}
+
+
+.navigation {
+  width: 100%;
+  background-color: black;
+}
+
+.navigation img {
+  width: 45px;
+  float: left;
+  vertical-align: middle;
+}
+
+.logout {
+  font-size: .8em;
+  position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  margin-top: 7px;
+  
+}
+
+.button {
+  text-decoration: none;
+  float: right;
+  color: #a6192e !important;
+  width: 70px;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+.navigation a:hover {
+  width: 175px;
+  text-decoration: none;
+}
+
+.navigation a:hover .logout{
+  opacity: .9;
+}

@@ -1,0 +1,79 @@
+<div class="container">
+        
+    <div class="py-3 text-center position-relative">
+        <a href="course.html" class="back">&#8678;BACK</a>
+        <h2>Course Creation</h2>
+        <p class="lead">Please add the course details that you want to create to.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="mb-3">Details</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="courseName">Course number</label>
+                        <input type="text" class="form-control" id="courseName" placeholder="" value="" required="">
+                        <div class="invalid-feedback">
+                            Valid Course number is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Course name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                        <div class="invalid-feedback">
+                            Valid Course name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="courselink">Course Page link</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="courselink" placeholder="https://...">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="noofstudents">Number of Students</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="noofstudents" required="">
+                        </div>
+                        <div class="invalid-feedback">
+                            Valid number of students is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="coursedesc">Course Description</label>
+                    <div class="input-group">
+                        <textarea class="form-control" id="coursedesc" placeholder="About the course..." required></textarea>
+                    </div>
+                    <div class="invalid-feedback">
+                        Valid course description is required.
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="start">Start Date</label>
+                        <input type="date" class="form-control" id="start" required="">
+                        <div class="invalid-feedback">
+                            Please select a valid start date.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="end">End Date</label>
+                        <input type="date" class="form-control" id="end" required="">
+                        <div class="invalid-feedback">
+                            Please provide a valid end date.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-lg btn-block edit-btn" type="submit">Create Course</button>
+            </form>
+        </div>
+    </div>
+</div>
