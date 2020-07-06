@@ -12,7 +12,3 @@ function openNav() {
     document.getElementsByClassName("content-course")[0].className = "col-sm-10 content-course"
 
   }
-
-  function goToHome(){
-    window.location.href = "../htmls/index.html";
-  }
