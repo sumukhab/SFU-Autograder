@@ -1,0 +1,15 @@
+.login-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    padding: 50px 80px;
+    border: 2px solid #a6192e;
+    border-radius: 5px;
+  }
+
+  .login-btn{
+    color: white !important;
+    background-color: #a6192e !important;
+  }
