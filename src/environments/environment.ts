@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://localhost:4200/'
+  api_url: 'https://cors-anywhere.herokuapp.com/https://cs-learnlab-02.csil.sfu.ca/jupyter/hub/api'
 };
 
 /*

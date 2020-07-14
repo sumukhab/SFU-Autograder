@@ -21,11 +21,13 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>(`${environment.api_url}/users/authenticate`, { username, password })
+        const body = { title: 'Request Api token', username: username, password: password }
+        return this.http.post<any>(`${environment.api_url}/authorizations/token`, { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 this.currentUserSubject.next(user);
+                console.log(user)
                 return user;
             }));
     }

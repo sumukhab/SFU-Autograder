@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreatecourseComponent } from './components/createcourse/createcourse.component';
+import { AuthenticationService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

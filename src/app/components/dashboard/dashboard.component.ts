@@ -10,6 +10,7 @@ import { User } from '../../models/user';
 })
 export class DashboardComponent implements OnInit {
   currentUser: User;
+  userName:string;
 
   constructor(
     private router: Router,
@@ -19,10 +20,11 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
 }

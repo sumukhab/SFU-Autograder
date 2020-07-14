@@ -45,11 +45,11 @@
 
         </div>
 
-        <div class="login-details">
+        <div class="login-details" *ngIf="currentUser">
             <p class="px-3 text-secondary mb-0">Signed in as:</p>
             <button type="button" href="#" class="btn" data-toggle="modal" data-target="#signout"><img
-                    src="../assets/images/login.png" width="40px" alt="login">
-                sbalasub</button>
+                    src="../assets/images/login.png" width="40px" alt="login"> {{ user.username }}
+            </button>
 
 
         </div>
