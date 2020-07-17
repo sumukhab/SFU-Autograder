@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    showErrorMessage = false;
     error = '';
 
     constructor(
@@ -61,6 +62,8 @@ export class LoginComponent implements OnInit {
                 error => {
                     this.error = error;
                     this.loading = false;
+                    this.showErrorMessage = true;
+
                 });
     }
 }
