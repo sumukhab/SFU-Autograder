@@ -1,0 +1,31 @@
+h1{
+  color: #a6192e;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 40px;
+}
+
+h4{
+  color: grey;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.login-form{
+  padding: 35px 80px;
+}
+
+
+.login-form-wrapper{
+    width: 50%;
+    margin: auto;
+    border: 2px solid #a6192e;
+    border-radius: 5px;
+  }
+
+  .login-btn{
+    color: white !important;
+    background-color: #a6192e !important;
+    margin-top: 20px;
+  }

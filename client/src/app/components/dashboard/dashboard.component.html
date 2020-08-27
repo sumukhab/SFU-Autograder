@@ -1,0 +1,237 @@
+<nav>
+    <div id="mySidenav" class="sidenav">
+        <h3 class="p-3">SFU Autograder</h3>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="courses px-5 mb-3">
+            <img src="../assets/images/training.png" alt="course icon" />
+            <a href="#">CMPT 354</a>
+        </div>
+        <div class="courses px-5 mb-3">
+            <img src="../assets/images/training.png" alt="course icon" />
+            <a href="#">CMPT 130</a>
+        </div>
+        <div class="courses px-5 mb-3">
+            <img src="../assets/images/training.png" alt="course icon" />
+            <a href="#">CMPT 110</a>
+        </div>
+        <div class="courses px-5 mb-3">
+            <img src="../assets/images/training.png" alt="course icon" />
+            <a href="#">CMPT 120</a>
+        </div>
+        <div class="courses px-5 mb-3">
+            <img src="../assets/images/training.png" alt="course icon" />
+            <a href="#">CMPT 470</a>
+        </div>
+        <div class="courses px-5 mb-3">
+            <img src="../assets/images/training.png" alt="course icon" />
+            <a href="#">CMPT 276</a>
+        </div>
+        <div class="separator">
+
+        </div>
+        <div class="courses py-2 ml-4">
+            <img src="../assets/images/add.png" alt="course icon" />
+            <a [routerLink]="'/createcourse'" class="font-weight-bold">Create
+                Course</a>
+        </div>
+
+        <div class="courses py-2 ml-4">
+            <img src="../assets/images/add.png" alt="course icon" />
+            <a href="#" class="font-weight-bold">Join
+                Course</a>
+        </div>
+
+        <div class="separator">
+
+        </div>
+
+        <div class="login-details">
+            <p class="px-3 text-secondary mb-0">Signed in as: </p>
+            <button type="button" href="#" class="btn" data-toggle="modal" data-target="#signout"><img
+                    src="../assets/images/login.png" width="40px" alt="login">{{currentUser.computingID}}
+            </button>
+
+
+        </div>
+
+        <!-- Modal -->
+
+
+    </div>
+</nav>
+
+<div class="modal fade" id="signout">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- header -->
+            <div class="mymodal-header">
+                <h3 class="modal-title">Sign Out</h3>
+                <button type="button" class="close btn" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <!-- body -->
+            <div class="modal-body">
+                <p class="text-center font-weight-bold">Are you sure you want to Signout?</p>
+            </div>
+            <!-- footer -->
+            <div class="modal-footer justify-content-center">
+                <button class="btn btn-bool" (click)="logout()">Yes</button>
+                <button class="btn btn-bool" data-dismiss="modal">No</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<main id="main">
+
+    <div class="row">
+        <div class="col-sm-1 menu">
+            <span class="hamburger" onclick="openNav()">&#9776;</span>
+        </div>
+        <div class="col-sm-10 content-course">
+            <div class="text-center">
+                <h2 class="text-center text-secondary">Dashboard</h2>
+                <p>Create courses and assignments here!!</p>
+
+            </div>
+            <section>
+                <div class="courses-section row m-3 p-3 border border-success rounded">
+                    <div class="col-sm-6">
+                        <h3>Courses</h3>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <div class="courses">
+                            <img src="../assets/images/add.png" alt="course icon" />
+                            <a [routerLink]="'/createcourse'" class="font-weight-bold">Create
+                                Course</a>
+                        </div>
+                    </div>
+                    <div class="row w-100 mt-4">
+                        <div class="col-sm-4">
+                            <div class="card border-secondary shadow">
+                                <div class="card-header">
+                                    <h5 class="card-title text-center">CMPT 354</h5>
+                                    <p class="card-text  text-center font-weight-bold">Database Systems I</p>
+                                </div>
+                                <div class="card-body">
+
+                                    <p class="card-text"># of Students Enrolled : <span
+                                            class="text-success font-weight-bold h4">50</span></p>
+                                    <h6>Description</h6>
+                                    <p>Topics will include user interfaces, objects, event-driven programming,
+                                        program design, and file and data management. Prerequisite: BC mathematics
+                                        12 (or equivalent) or any 100 level MATH course.</p>
+                                    <a [routerLink]="'/editor'" class="btn edit-btn d-block">Edit Course</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card border-secondary shadow">
+                                <div class="card-header">
+                                    <h5 class="card-title text-center">CMPT 130</h5>
+                                    <p class="card-text text-center font-weight-bold">Introduction to Computer
+                                        Programming I</p>
+                                </div>
+                                <div class="card-body">
+
+                                    <p class="card-text"># of Students Enrolled : <span
+                                            class="text-success font-weight-bold h4">75</span></p>
+                                    <h6>Description</h6>
+                                    <p>Topics will include user interfaces, objects, event-driven programming,
+                                        program design, and file and data management. Prerequisite: BC mathematics
+                                        12 (or equivalent) or any 100 level MATH course.</p>
+                                    <a [routerLink]="'/editor'" class="btn edit-btn d-block">Edit Course</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card border-secondary shadow">
+                                <div class="card-header">
+                                    <h5 class="card-title text-center">CMPT 110</h5>
+                                    <p class="card-text text-center font-weight-bold">Programming in Visual Basic CMPT
+                                    </p>
+                                </div>
+                                <div class="card-body">
+
+                                    <p class="card-text"># of Students Enrolled : <span
+                                            class="text-success font-weight-bold h4">121</span></p>
+                                    <h6>Description</h6>
+                                    <p>Topics will include user interfaces, objects, event-driven programming,
+                                        program design, and file and data management. Prerequisite: BC mathematics
+                                        12 (or equivalent) or any 100 level MATH course.</p>
+                                    <a [routerLink]="'/editor'" class="btn edit-btn d-block">Edit Course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row w-100 mt-4">
+                        <div class="col-sm-4">
+                            <div class="card border-secondary shadow">
+                                <div class="card-header">
+                                    <h5 class="card-title text-center">CMPT 120</h5>
+                                    <p class="card-text text-center font-weight-bold">Introduction to Computer II</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text"># of Students Enrolled : <span
+                                            class="text-success font-weight-bold h4">41</span></p>
+                                    <h6>Description</h6>
+                                    <p>Topics will include user interfaces, objects, event-driven programming,
+                                        program design, and file and data management. Prerequisite: BC mathematics
+                                        12 (or equivalent) or any 100 level MATH course.</p>
+                                    <a [routerLink]="'/editor'" class="btn edit-btn d-block">Edit Course</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card border-secondary shadow">
+                                <div class="card-header">
+                                    <h5 class="card-title text-center">CMPT 470</h5>
+                                    <p class="card-text text-center font-weight-bold">Web Based Systems</p>
+                                </div>
+                                <div class="card-body">
+
+                                    <p class="card-text"># of Students Enrolled : <span
+                                            class="text-success font-weight-bold h4">101</span></p>
+                                    <h6>Description</h6>
+                                    <p>Topics will include user interfaces, objects, event-driven programming,
+                                        program design, and file and data management. Prerequisite: BC mathematics
+                                        12 (or equivalent) or any 100 level MATH course.</p>
+                                    <a [routerLink]="'/editor'" class="btn edit-btn d-block">Edit Course</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card border-secondary shadow">
+                                <div class="card-header">
+                                    <h5 class="card-title text-center">CMPT 276</h5>
+                                    <p class="card-text text-center font-weight-bold">Software Engineering</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text"># of Students Enrolled : <span
+                                            class="text-success font-weight-bold h4">89</span></p>
+                                    <h6>Description</h6>
+                                    <p>Topics will include user interfaces, objects, event-driven programming,
+                                        program design, and file and data management. Prerequisite: BC mathematics
+                                        12 (or equivalent) or any 100 level MATH course.</p>
+                                    <a [routerLink]="'/editor'" class="btn edit-btn d-block">Edit Course</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-sm-1">
+            <div class="navigation">
+
+                <a class="button" (click)="logout()">
+                    <img src="../assets/images/logout.png">
+
+                    <div class="logout h6">SIGNOUT</div>
+
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</main>

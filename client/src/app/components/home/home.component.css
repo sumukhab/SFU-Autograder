@@ -1,0 +1,65 @@
+header {
+    padding: 10px;
+    text-align: center;
+    background: white;
+    color: #a6192e;
+  }
+
+  .header-wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+  }
+
+  .logo img{
+      width: 50%;
+
+  }
+  
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  .banner {
+    background-image: url("../../../assets/images/banner.jpg"); 
+    height: 500px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    opacity: 0.6;
+  }
+
+  .login-btn{
+    background-color: #a6192e;
+    color: white;
+    position: absolute;
+    top: 45%;
+    border-radius: 50%;
+    width: 135px;
+    height: 135px;
+    font-size: 25px;
+    box-shadow: 0 0 8px 7px gray;
+  }
+
+.instructor{
+    left: 20%;
+    padding: 45px 16px;
+  }
+
+.student{
+    left: 70%;
+    padding: 45px 23px;
+  }
+
+  .login-btn:hover{
+      color: #ddd;
+  }
+
+  
+  /* Footer */
+  footer {
+    padding: 30px;
+    text-align: center;
+    background: #ddd;
+  }
