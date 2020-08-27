@@ -1,0 +1,2 @@
+# SFU-Autograder
+Autograding platform
