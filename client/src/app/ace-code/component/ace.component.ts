@@ -7,6 +7,11 @@ import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/ext-beautify';
 
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { EditorHandlerService } from 'src/app/services/editor-handler.service';
+import { first } from 'rxjs/operators';
+
 
 const INIT_CONTENT = '';
 const THEME = 'ace/theme/github';
@@ -18,12 +23,31 @@ const LANG = 'ace/mode/python';
     styleUrls: ['./ace.component.css']
 }) export class AceComponent implements AfterViewInit {
 
+    saveForm: FormGroup;
+    submitted = false;
+    loading = false;
+    showErrorMessage = false;
+    returnUrl: string;
+    error = '';
+
     private codeEditor: ace.Ace.Editor;
     private editorBeautify; // beautify extension
     @ViewChild('codeEditor') private codeEditorElmRef: ElementRef;
     @Input() content: string;
 
-    constructor() { }
+    constructor(private editorhandler: EditorHandlerService,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,) { }
+
+    ngOnInit(): void {
+        this.saveForm = this.formBuilder.group({
+            filename: ['', Validators.required]
+        });
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/editor';
+    }
+
+    get f() { return this.saveForm.controls; }
 
     ngAfterViewInit() {
         ace.require('ace/ext/language_tools');
@@ -33,6 +57,30 @@ const LANG = 'ace/mode/python';
         this.setContent(this.content || INIT_CONTENT);
         // hold reference to beautify extension
         this.editorBeautify = ace.require('ace/ext/beautify');
+    }
+
+
+    onSave() {
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.saveForm.invalid) {
+            return;
+        }
+        this.loading = true;
+
+        this.editorhandler.saveCode(this.content, this.f.filename.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    console.log(data);
+                    this.router.navigate([this.returnUrl]);
+                },
+                error => {
+                    this.error = error;
+                    this.showErrorMessage = true;
+                    this.loading = false;
+                });
     }
 
 
@@ -88,7 +136,7 @@ const LANG = 'ace/mode/python';
         }
     }
 
-    public clearCode(){
+    public clearCode() {
         this.codeEditor.setValue("")
     }
 

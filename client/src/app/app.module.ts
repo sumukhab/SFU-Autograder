@@ -16,6 +16,7 @@ import { CreatecourseComponent } from './components/createcourse/createcourse.co
 import { LoginComponent } from './components/login/login.component';
 import { CodeEditorModule } from './ace-code/code-editor.module';
 import { EditorpageComponent } from './components/editorpage/editorpage.component';
+import { EditorHandlerService } from './services/editor-handler.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { EditorpageComponent } from './components/editorpage/editorpage.componen
     DashboardComponent,
     CreatecourseComponent,
     LoginComponent,
-    EditorpageComponent,
+    EditorpageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ import { EditorpageComponent } from './components/editorpage/editorpage.componen
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-      AuthenticationService],
+      AuthenticationService,EditorHandlerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

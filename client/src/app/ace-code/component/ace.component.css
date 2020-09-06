@@ -31,3 +31,37 @@ select.languages-select > option {
 select.languages-select:focus > option:checked { 
     font-weight: bold;
 }
+
+.mymodal-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.mymodal-header button{
+    color: gray;
+    border-radius: 50%;
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+}
+
+.mymodal-header button span{
+    position: relative;
+    bottom: 3px;
+}
+
+.mymodal-header button:hover{
+    background-color: #a6192e;
+    color: white !important;
+}
+
+.btn-bool{
+    color: white !important;
+    background-color: #a6192e !important;
+    width: 175px;
+}
+
+.modal-title{
+    color: #a6192e;
+}

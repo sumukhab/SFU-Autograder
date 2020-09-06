@@ -20,9 +20,8 @@
                     <label class="input-group-text" for="languages-select">Languages</label>
                 </div>
                 <select class="languages-select" id="languages-select" #languagesSelect>
-                    <option value="1">C++</option>
+                    <option value="1">C</option>
                     <option value="2">Python</option>
-                    <option value="3">Java</option>
                 </select>
             </div>
         </div>
@@ -78,7 +77,7 @@
         </div>
 
         <div class="col-4 col-lg-2 col-md-3 col-sm-4 w-75">
-            <button type="button" class="btn btn-success btn-sm btn-block px-4 mx-2" (click)="clearCode()">
+            <button type="button" class="btn btn-success btn-sm btn-block px-4 mx-2" data-toggle="modal" data-target="#savefile">
                 Save
             </button>
         </div>
@@ -91,4 +90,43 @@
             <textarea class="form-control output" rows="6" disabled="true" aria-label="output-textarea"></textarea>
         </div>
     </div>
+
+
 </div>
+<div class="modal fade" id="savefile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- header -->
+            <div class="mymodal-header">
+                <h3 class="modal-title">Save filename as </h3>
+                <button type="button" class="close btn" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <!-- body -->
+            <div class="modal-body">
+                <form [formGroup]="saveForm" (ngSubmit)="onSave()" class="save-form">
+                    <div class="form-group">
+                        <label for="filename">Filename</label>
+                        <input type="text" formControlName="filename" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.filename.errors }" />
+                        <div *ngIf="submitted && f.filename.errors" class="invalid-feedback">
+                            <div *ngIf="f.filename.errors.required">Filename is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-secondary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            OK
+                        </button>
+                    </div>
+                    
+                    </form>
+            </div>
+            <!-- footer -->
+            <div class="modal-footer justify-content-center">
+                <button class="btn btn-bool" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
